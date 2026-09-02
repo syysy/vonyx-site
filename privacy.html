@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de Confidentialité — Vonyx</title>
+  <meta name="description" content="Politique de confidentialité et protection des données personnelles de l'application Vonyx.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0C;
+      --card: #141419;
+      --primary: #8A2BE2;
+      --primary-light: #A855F7;
+      --text: #EDEDED;
+      --text-muted: #A0A0A0;
+      --border: #222228;
+    }
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    h1 {
+      color: #FFF;
+      font-size: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-top: 0;
+    }
+    h2 {
+      color: var(--primary-light);
+      font-size: 1.25rem;
+      margin-top: 32px;
+      margin-bottom: 10px;
+    }
+    p, li {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--primary-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .back:hover {
+      text-decoration: underline;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(168, 85, 247, 0.15);
+      color: var(--primary-light);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back">← Retour à l'accueil</a>
+    <br>
+    <div class="badge">Dernière mise à jour : 2 Septembre 2026</div>
+    <h1>Politique de Confidentialité de Vonyx</h1>
+
+    <h2>1. Introduction</h2>
+    <p>L'application mobile <strong>Vonyx</strong> s'engage à respecter votre vie privée et à garantir la sécurité de vos données personnelles. Cette politique détaille la nature des informations que nous collectons, la manière dont elles sont traitées et vos droits en tant qu'utilisateur conformément au Règlement Général sur la Protection des Données (RGPD).</p>
+
+    <h2>2. Données Personnelles Collectées</h2>
+    <p>Dans le cadre de l'utilisation de Vonyx, nous collectons uniquement les données strictement nécessaires au bon fonctionnement du service :</p>
+    <ul>
+      <li><strong>Informations de compte :</strong> Votre adresse e-mail, prénom, nom et photo de profil lorsque vous vous connectez avec votre compte Google (Google Sign-In) ou lors de la création d'un compte avec mot de passe.</li>
+      <li><strong>Données de calendrier et de listes :</strong> Les titres, dates, horaires, descriptions, catégories, cycles de récurrence et listes partagées que vous créez dans l'application.</li>
+      <li><strong>Token de notification push (FCM) :</strong> Un jeton technique d'appareil délivré par Firebase Cloud Messaging (Google) pour vous transmettre vos rappels d'événements et alertes de listes collaboratives.</li>
+      <li><strong>Accès aux contacts (Optionnel) :</strong> L'accès aux contacts de votre appareil est utilisé exclusivement lorsque vous choisissez manuellement d'importer une date d'anniversaire. Aucun contact n'est collecté ni stocké sur nos serveurs sans votre action explicite.</li>
+    </ul>
+
+    <h2>3. Finalités du Traitement des Données</h2>
+    <p>Les informations collectées sont utilisées pour :</p>
+    <ul>
+      <li>Assurer la synchronisation temps réel de vos événements et plannings entre vos différents appareils.</li>
+      <li>Permettre la collaboration au sein des listes d'événements partagées entre membres invités.</li>
+      <li>Envoyer les notifications de rappels locaux et push aux horaires configurés.</li>
+    </ul>
+
+    <h2>4. Partage et Sécurité des Données</h2>
+    <p><strong>Nous ne vendons, ne louons et ne partageons aucune de vos données personnelles à des fins publicitaires ou commerciales.</strong></p>
+    <ul>
+      <li><strong>Chiffrement des transmissions :</strong> Toutes les communications entre l'application Vonyx et nos serveurs sont intégralement chiffrées via <strong>HTTPS / TLS 1.3</strong>.</li>
+      <li><strong>Sécurité des mots de passe :</strong> Les mots de passe sont hachés de manière irréversible avec l'algorithme robuste <strong>Argon2id</strong>.</li>
+      <li><strong>Sous-traitants techniques :</strong> Nous faisons appel à <em>Google Firebase Cloud Messaging</em> pour la distribution des notifications push et à <em>Google OAuth</em> pour l'authentification sécurisée.</li>
+    </ul>
+
+    <h2>5. Conservation et Suppression de vos Données</h2>
+    <p>Vos données sont conservées aussi longtemps que votre compte reste actif. Vous pouvez à tout moment demander la suppression définitive et intégrale de votre compte et de l'ensemble de vos événements et listes associées directement depuis les paramètres de l'application ou par simple e-mail à l'adresse ci-dessous.</p>
+
+    <h2>6. Contact & Délégué à la Protection des Données</h2>
+    <p>Pour toute question ou exercice de vos droits d'accès, de rectification ou d'effacement, vous pouvez nous contacter :</p>
+    <p><strong>E-mail :</strong> support@vonyx.app</p>
+
+    <div class="footer">© 2026 Vonyx. Tous droits réservés.</div>
+  </div>
+</body>
+</html>
