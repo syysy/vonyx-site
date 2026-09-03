@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suppression de Compte & Données — Vonyx</title>
+  <meta name="description" content="Page officielle de demande de suppression de compte et de données personnelles de l'application Vonyx.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0C;
+      --card: #141419;
+      --primary: #8A2BE2;
+      --primary-light: #A855F7;
+      --danger: #EF4444;
+      --danger-hover: #DC2626;
+      --text: #EDEDED;
+      --text-muted: #A0A0A0;
+      --border: #222228;
+      --input-bg: #0F0F14;
+      --success: #10B981;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 44px 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--primary-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .back:hover {
+      text-decoration: underline;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(239, 68, 68, 0.12);
+      color: #F87171;
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    h1 {
+      color: #FFF;
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .card-section {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    h2 {
+      color: #FFF;
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: #EDEDED;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: #FFF;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: var(--primary-light);
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .checkbox-group input {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--danger);
+      cursor: pointer;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1.4;
+    }
+    .btn-danger {
+      width: 100%;
+      padding: 16px;
+      background: var(--danger);
+      color: #FFF;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+      font-family: inherit;
+    }
+    .btn-danger:hover:not(:disabled) {
+      background: var(--danger-hover);
+    }
+    .btn-danger:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .status-box {
+      display: none;
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+    .status-success {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34D399;
+    }
+    .status-error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #F87171;
+    }
+    .app-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--input-bg);
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFF;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+    }
+    .footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back">← Retour à l'accueil</a>
+    <br>
+    <div class="badge">RGPD & Conformité Google Play</div>
+    <h1>Suppression de compte et de données personnelles</h1>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et aux règles du Google Play Store, vous disposez d'un droit total à l'effacement de votre compte et de l'ensemble de vos données.</p>
+
+    <!-- Section 1 : Ce qui est supprimé -->
+    <div class="card-section">
+      <h2>🗑️ Quelles sont les données supprimées ?</h2>
+      <p>La confirmation de la suppression entraîne la destruction définitive et irréversible de :</p>
+      <ul>
+        <li><strong>Profil & Identifiants :</strong> Votre nom, prénom, photo et adresse e-mail associés au compte.</li>
+        <li><strong>Calendrier & Événements :</strong> Tous les événements, rappels, récurrences et notes personnels créés.</li>
+        <li><strong>Listes collaboratives :</strong> Votre adhésion aux listes partagées ainsi que les listes dont vous êtes propriétaire.</li>
+        <li><strong>Notifications :</strong> Vos jetons d'appareil Firebase Cloud Messaging (FCM) permettant de recevoir des rappels.</li>
+      </ul>
+      <p style="margin-bottom: 0; margin-top: 12px; font-size: 0.9rem;"><em>Note : Aucune de ces données n'est conservée à des fins statistiques ou commerciales après la suppression.</em></p>
+    </div>
+
+    <!-- Section 2 : Suppression directe dans l'app -->
+    <div class="card-section">
+      <h2>📱 Méthode 1 : Directement depuis l'application mobile Vonyx</h2>
+      <p>Si vous avez accès à votre téléphone, la suppression est instantanée depuis l'application :</p>
+      <div class="app-steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div>Ouvrez l'application <strong>Vonyx</strong> sur votre téléphone.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div>Accédez à l'onglet <strong>Préférences</strong> (icône engrenage ⚙️).</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div>Faites défiler jusqu'à la section rouge <strong>Zone de danger</strong> et touchez <strong>Supprimer mon compte</strong>.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div>Confirmez l'opération dans la boîte de dialogue. Votre session et vos données sont immédiatement purgées.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3 : Formulaire de demande en ligne -->
+    <div class="card-section">
+      <h2>🌐 Méthode 2 : Formulaire de suppression en ligne</h2>
+      <p>Si vous avez désinstallé l'application, vous pouvez demander la suppression immédiate via ce formulaire :</p>
+
+      <form id="deleteForm">
+        <div class="form-group">
+          <label for="email">Votre adresse e-mail de compte Vonyx *</label>
+          <input type="email" id="email" required placeholder="nom@exemple.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe (si compte créé par e-mail/mot de passe)</label>
+          <input type="password" id="password" placeholder="Laisser vide si connexion Google">
+          <small style="color: var(--text-muted); font-size: 0.82rem; display: block; margin-top: 4px;">
+            Si vous vous connectiez via Google Sign-In, ce champ n'est pas requis.
+          </small>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="confirmCheck" required>
+          <label for="confirmCheck">Je confirme vouloir supprimer définitivement mon compte Vonyx et l'ensemble de mes données associées. Cette action est irréversible.</label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-danger">
+          Demander la suppression définitive
+        </button>
+
+        <div id="statusBox" class="status-box"></div>
+      </form>
+    </div>
+
+    <!-- Section 4 : Contact alternatif -->
+    <div class="card-section" style="margin-bottom: 0;">
+      <h2>✉️ Méthode 3 : Demande par e-mail</h2>
+      <p>Vous pouvez également adresser une simple demande à notre équipe support à l'adresse ci-dessous en précisant l'adresse e-mail de votre compte :</p>
+      <p><a href="mailto:support@vonyx.app?subject=Demande%20de%20suppression%20de%20compte%20Vonyx" style="color: var(--primary-light); font-weight: 600; text-decoration: none;">support@vonyx.app</a></p>
+      <p style="margin-bottom: 0; font-size: 0.9rem;">Délai de traitement maximal : 48 heures ouvrées.</p>
+    </div>
+
+    <div class="footer">
+      <a href="index.html">Accueil</a> • 
+      <a href="privacy.html">Politique de Confidentialité</a> • 
+      <a href="delete-account.html">Suppression de compte</a><br><br>
+      © 2026 Vonyx. Tous droits réservés.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('deleteForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusBox = document.getElementById('statusBox');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Traitement en cours...';
+      statusBox.style.display = 'none';
+
+      try {
+        const response = await fetch('https://df-api.dzqdzq.net/auth/delete-account', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password ? password : undefined,
+          }),
+        });
+
+        const data = await response.json();
+
+        statusBox.style.display = 'block';
+        if (response.ok && data.success) {
+          statusBox.className = 'status-box status-success';
+          statusBox.innerHTML = '✅ <strong>Succès :</strong> ' + (data.message || 'Votre demande de suppression a été traitée avec succès.');
+          form.reset();
+        } else {
+          statusBox.className = 'status-box status-error';
+          statusBox.innerHTML = '⚠️ <strong>Erreur :</strong> ' + (data.message || data.error || 'Impossible de traiter la demande.');
+        }
+      } catch (err) {
+        statusBox.style.display = 'block';
+        statusBox.className = 'status-box status-error';
+        statusBox.innerHTML = '⚠️ <strong>Erreur réseau :</strong> Impossible de joindre le serveur. Vous pouvez également nous contacter directement à support@vonyx.app.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Demander la suppression définitive';
+      }
+    });
+  </script>
+</body>
+</html>
